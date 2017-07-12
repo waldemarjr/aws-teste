@@ -4,11 +4,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider :aws do |aws, override|
 
-    config.vm.provision :shell do |s|
-  	s.env = {AWS_ACCESS_KEY:ENV['AWS_ACCESS_KEY']}
-  	s.path = 'scripts/aws_settings.sh'
-    end
-
     config.vm.box = "dummy"
     config.vm.host_name = "webserver01"
 
