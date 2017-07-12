@@ -1,0 +1,15 @@
+---
+- hosts: all
+  name: Deploy de Servicos basicos
+  become: yes
+  become_user: root
+  remote_user: ubuntu
+
+  tasks:
+   - name: Instalar Apache Web Server
+     apt: name=apache2 update_cache=yes state=latest
+
+   - name: Instalar MariaDB Server
+     apt: name=mariadb-server update_cache=yes state=latest
+
+
